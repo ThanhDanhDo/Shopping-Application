@@ -1,1 +1,1 @@
-Shpping Application
+Shopping Application
