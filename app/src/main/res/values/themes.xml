@@ -5,5 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Shopping_Application" parent="Base.Theme.Shopping_Application" />
+    <style name="Theme.Shopping_Application" parent="Base.Theme.Shopping_Application">
+<!--Thanh điều hướng ở dưới trở nên trong suốt-->
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
 </resources>

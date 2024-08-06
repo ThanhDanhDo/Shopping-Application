@@ -5,6 +5,124 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".SignUpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="34dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="90px"
+                android:layout_marginTop="25dp"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/darkGreenText"
+                android:textSize="30dp"
+                android:layout_marginTop="100dp"
+                android:text="Sign Up" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_margin="90px"
+                android:layout_width="898.4px"
+                android:layout_height="773.5px"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70px"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/darkGreenText"
+                        android:textSize="20dp"
+                        android:text="Username"/>
+
+                    <!--maxLength="20" giới hạn 20 kí tự-->
+                    <EditText
+                        android:id="@+id/edtUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="58px"
+                        android:layout_marginRight="58px"
+                        android:maxLength="20"
+                        android:inputType="text"
+                        />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70px"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/darkGreenText"
+                        android:textSize="20dp"
+                        android:text="Password" />
+
+                    <EditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="58px"
+                        android:layout_marginRight="58px"
+                        android:maxLength="20"
+                        android:inputType="textPassword" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="70px"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/darkGreenText"
+                        android:textSize="20dp"
+                        android:text="Confirm Password" />
+
+                    <EditText
+                        android:id="@+id/EdtConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="58px"
+                        android:layout_marginRight="58px"
+                        android:maxLength="20"
+                        android:inputType="textPassword" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/button"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/radius45dp_button_bg"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:text="Create Account" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/intro_background"
+    tools:context=".IntroActivity">
+    <!--ScrollView: khi nội dung vượt quá chiều cao của màn hình,
+    phần nội dung đó có thể cuộn lên xuống để xem, truy cập (đối với màn hình nhỏ).    -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--textAlignment="center": căn chỉnh lề chữ-->
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:text="Shopping\nApplication"
+                android:textAlignment="center"
+                android:textColor="@color/darkGreenText"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+            <!--android:lineSpacingExtra="10dp": khoảng cách giữa các dòng chữ-->
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="180dp"
+                android:lineSpacingExtra="10dp"
+                android:text="@string/intro_text"
+                android:textAlignment="center"
+                android:textColor="@color/darkGreenText"
+                android:textSize="20dp" />
+
+            <!--AppCompatButton cung cấp khả năng tương thích ngược và hỗ trợ tốt hơn cho Material Design.
+Khi nhấn giữ nút btn sẽ có shadow dưới btn
+style="@android/Widget.Button" đảm bảo button có phong cách mặc định của hệ điều hành Android (padding...)-->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignUpIntro"
+                style="@android:style/Widget.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="32dp"
+                android:background="@drawable/radius45dp_button_bg"
+                android:text="Sign Up"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an account? "
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/btnSignInIntro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sign In"
+                    android:textColor="@color/darkGreenText"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
