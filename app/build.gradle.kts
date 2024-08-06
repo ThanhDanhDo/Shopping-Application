@@ -64,7 +64,7 @@ dependencies {
     //ViewModel
     implementation("androidx.activity:activity-ktx:1.9.1")
     // Thư viện Glide cho tải và hiển thị hình ảnh
-    implementation("com.github.bumptech.glide:glide:4.16.0'")
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
     // Thư viện DotsIndicator để tạo các dấu chấm chỉ thị trang
     implementation("com.tbuonomo:dotsindicator:5.0")
 }
