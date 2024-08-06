@@ -73,7 +73,7 @@ style="@android/Widget.Button" đảm bảo button có phong cách mặc định
                     android:textSize="18dp" />
 
                 <TextView
-                    android:id="@+id/btnSignInIntro"
+                    android:id="@+id/txtSignInIntro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sign In"
