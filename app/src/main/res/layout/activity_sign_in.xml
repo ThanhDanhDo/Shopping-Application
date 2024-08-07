@@ -22,6 +22,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back" />
 
+<!--sp: phù hp cho text hỗ trợ phóng to thu nhỏ dựa trên trợ năng người dùng-->
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
@@ -30,7 +31,7 @@
         android:layout_marginTop="76dp"
         android:text="Sign In"
         android:textColor="@color/darkGreenText"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +65,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Username"
                 android:textColor="@color/darkGreenText"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <!--maxLength="20" giới hạn 20 kí tự-->
             <EditText
@@ -84,7 +85,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Password"
                 android:textColor="@color/darkGreenText"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edtPassword"
@@ -115,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="No account ? "
-            android:textSize="20dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txtRegister"
@@ -123,7 +124,7 @@
             android:layout_height="wrap_content"
             android:text="Create now"
             android:textColor="@color/darkGreenText"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -137,7 +138,7 @@
         android:background="@drawable/radius45dp_button_bg"
         android:text="Sign In"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
