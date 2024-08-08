@@ -97,6 +97,7 @@ tools:visibility="visible": hiển thị khi thiết kế giao diện
 
 Dành cho chế độ xem trước trong Android Studio, DotsIndicator sẽ hiển thị khi thiết kế giao diện (trạng thái visible)-->
                 <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dotIndicator"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
