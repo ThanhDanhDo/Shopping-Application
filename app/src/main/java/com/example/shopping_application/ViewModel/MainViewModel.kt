@@ -3,6 +3,7 @@ package com.example.shopping_application.ViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.shopping_application.Model.ProductTypeModel
 import com.example.shopping_application.Model.SliderModel
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -13,8 +14,10 @@ class MainViewModel(): ViewModel() {
     private val firebaseDatabase = FirebaseDatabase.getInstance()
 
     private val _banner = MutableLiveData<List<SliderModel>>()
+    private val _productType = MutableLiveData<MutableList<ProductTypeModel>>()
 
     val banners: LiveData<List<SliderModel>> = _banner
+    val productTypes: LiveData<MutableList<ProductTypeModel>> = _productType
 
     fun loadBanners() {
         val Ref = firebaseDatabase.getReference("Banner")
@@ -32,6 +35,26 @@ class MainViewModel(): ViewModel() {
 
             override fun onCancelled(error: DatabaseError) {
 
+            }
+        })
+    }
+
+    fun loadProductType() {
+        val Ref = firebaseDatabase.getReference("ProductType")
+        Ref.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val lists = mutableListOf<ProductTypeModel>()
+                for (childSnapshot in snapshot.children) {
+                    val list = childSnapshot.getValue(ProductTypeModel::class.java)
+                    if (list != null) {
+                        lists.add(list)
+                    }
+                }
+                _productType.value = lists
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
             }
         })
     }
