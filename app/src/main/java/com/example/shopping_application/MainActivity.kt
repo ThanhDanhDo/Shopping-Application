@@ -17,6 +17,7 @@ import com.example.shopping_application.Adapter.SliderAdapter
 import com.example.shopping_application.Model.SliderModel
 import com.example.shopping_application.ViewModel.MainViewModel
 import com.example.shopping_application.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : BaseActivity() {
@@ -28,6 +29,7 @@ class MainActivity : BaseActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
