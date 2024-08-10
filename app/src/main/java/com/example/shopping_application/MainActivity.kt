@@ -6,11 +6,13 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.example.shopping_application.Adapter.ProductTypeAdapter
+import com.example.shopping_application.Adapter.RecommendationAdapter
 import com.example.shopping_application.Adapter.SliderAdapter
 import com.example.shopping_application.Model.SliderModel
 import com.example.shopping_application.ViewModel.MainViewModel
@@ -35,6 +37,8 @@ class MainActivity : BaseActivity() {
         initBanner()
 
         initProductType()
+
+        initRecommendation()
     }
 
     private fun initBanner() {
@@ -73,5 +77,16 @@ class MainActivity : BaseActivity() {
             binding.pgbProductType.visibility = View.GONE
         })
         viewModel.loadProductType()
+    }
+
+    private fun initRecommendation() {
+        binding.pgbRecommendation.visibility = View.VISIBLE
+        viewModel.recommendation.observe(this, Observer {
+            binding.rvRecommendation.layoutManager =
+                GridLayoutManager(this@MainActivity, 2)
+            binding.rvRecommendation.adapter = RecommendationAdapter(it)
+            binding.pgbRecommendation.visibility = View.GONE
+        })
+        viewModel.loadRecommendation()
     }
 }

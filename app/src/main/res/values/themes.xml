@@ -6,7 +6,7 @@
     </style>
 
     <style name="Theme.Shopping_Application" parent="Base.Theme.Shopping_Application">
-<!--Thanh điều hướng ở dưới trở nên trong suốt-->
-<!--        <item name="android:windowTranslucentNavigation">true</item>-->
+<!--Thanh điều hướng ở dưới không trong suốt-->
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 </resources>
