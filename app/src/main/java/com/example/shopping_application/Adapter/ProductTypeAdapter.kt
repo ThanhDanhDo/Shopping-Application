@@ -13,7 +13,7 @@ import com.example.shopping_application.Model.ProductTypeModel
 import com.example.shopping_application.R
 import com.example.shopping_application.databinding.ViewholderProductTypeBinding
 
-class ProductTypeAdapter(val item: MutableList<ProductTypeModel>) :
+class ProductTypeAdapter(val items: MutableList<ProductTypeModel>) :
     RecyclerView.Adapter<ProductTypeAdapter.Viewholder>() {
 
     private var selectedPosition = -1
@@ -35,7 +35,7 @@ class ProductTypeAdapter(val item: MutableList<ProductTypeModel>) :
     }
 
     override fun onBindViewHolder(holder: ProductTypeAdapter.Viewholder, position: Int) {
-        val item = item[position]
+        val item = items[position]
         holder.binding.txtTitle.text = item.title
 
         Glide.with(holder.itemView.context)
@@ -67,6 +67,6 @@ class ProductTypeAdapter(val item: MutableList<ProductTypeModel>) :
     }
 
     override fun getItemCount(): Int {
-        return item.size
+        return items.size
     }
 }
