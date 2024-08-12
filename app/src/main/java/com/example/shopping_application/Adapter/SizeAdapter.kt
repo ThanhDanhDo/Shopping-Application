@@ -13,15 +13,16 @@ import com.example.shopping_application.Model.ProductTypeModel
 import com.example.shopping_application.R
 import com.example.shopping_application.databinding.ViewholderListProductBinding
 import com.example.shopping_application.databinding.ViewholderProductTypeBinding
+import com.example.shopping_application.databinding.ViewholderSizeBinding
 
-class ListProductAdapter(val items: MutableList<String>) :
-    RecyclerView.Adapter<ListProductAdapter.Viewholder>() {
+class SizeAdapter(val items: MutableList<String>) :
+    RecyclerView.Adapter<SizeAdapter.Viewholder>() {
 
     private var selectedPosition = -1
     private var lastSelectedPosition = -1
     private lateinit var context: Context
 
-    class Viewholder(val binding: ViewholderListProductBinding) :
+    class Viewholder(val binding: ViewholderSizeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
     }
@@ -29,16 +30,14 @@ class ListProductAdapter(val items: MutableList<String>) :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ListProductAdapter.Viewholder {
+    ): SizeAdapter.Viewholder {
         context = parent.context
-        val binding = ViewholderListProductBinding.inflate(LayoutInflater.from(context), parent, false)
+        val binding = ViewholderSizeBinding.inflate(LayoutInflater.from(context), parent, false)
         return Viewholder(binding)
     }
 
-    override fun onBindViewHolder(holder: ListProductAdapter.Viewholder, position: Int) {
-        Glide.with(holder.itemView.context)
-            .load(items[position])
-            .into(holder.binding.imgProduct)
+    override fun onBindViewHolder(holder: SizeAdapter.Viewholder, position: Int) {
+        holder.binding.txtSize.text = items[position]
 
         holder.binding.root.setOnClickListener {
             lastSelectedPosition = selectedPosition
@@ -48,10 +47,12 @@ class ListProductAdapter(val items: MutableList<String>) :
         }
 
         if (selectedPosition == position) {
-            holder.binding.listProductLayout.setBackgroundResource(R.drawable.grey_bg_selected)
+            holder.binding.sizeLayout.setBackgroundResource(R.drawable.grey_bg_selected)
+            holder.binding.txtSize.setTextColor(context.resources.getColor(R.color.darkGreen))
         }
         else {
-            holder.binding.listProductLayout.setBackgroundResource(R.drawable.grey_bg)
+            holder.binding.sizeLayout.setBackgroundResource(R.drawable.grey_bg)
+            holder.binding.txtSize.setTextColor(context.resources.getColor(R.color.black))
         }
     }
 

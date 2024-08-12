@@ -1,6 +1,6 @@
 package com.example.shopping_application.Model
 
-data class ItemModel(
+data class ItemsModel(
     var productName: String = "",
     var description: String = "",
     var picUrl: ArrayList<String> = ArrayList(),

@@ -67,4 +67,6 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     // Thư viện DotsIndicator để tạo các dấu chấm chỉ thị trang dưới banner
     implementation("com.tbuonomo:dotsindicator:5.0")
+    //Thư viên Gson cho TinyDB.java trong helper
+    implementation ("com.google.code.gson:gson:2.8.8")
 }

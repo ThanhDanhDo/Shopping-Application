@@ -1,18 +1,16 @@
 package com.example.shopping_application.Adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.shopping_application.Model.ItemModel
+import com.example.shopping_application.Model.ItemsModel
 import com.example.shopping_application.databinding.ViewholderRecommendationBinding
 import android.content.Context
-import android.content.Intent
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
 
-class RecommendationAdapter(val items: MutableList<ItemModel>) :
+class RecommendationAdapter(val items: MutableList<ItemsModel>) :
     RecyclerView.Adapter<RecommendationAdapter.ViewHolder>() {
 
     private var context: Context? = null

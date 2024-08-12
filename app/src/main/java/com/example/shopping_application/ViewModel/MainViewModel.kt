@@ -1,10 +1,9 @@
 package com.example.shopping_application.ViewModel
 
-import android.content.ClipData.Item
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.shopping_application.Model.ItemModel
+import com.example.shopping_application.Model.ItemsModel
 import com.example.shopping_application.Model.ProductTypeModel
 import com.example.shopping_application.Model.SliderModel
 import com.google.firebase.database.DataSnapshot
@@ -17,11 +16,11 @@ class MainViewModel(): ViewModel() {
 
     private val _banner = MutableLiveData<List<SliderModel>>()
     private val _productType = MutableLiveData<MutableList<ProductTypeModel>>()
-    private val _recommendation = MutableLiveData<MutableList<ItemModel>>()
+    private val _recommendation = MutableLiveData<MutableList<ItemsModel>>()
 
     val banners: LiveData<List<SliderModel>> = _banner
     val productTypes: LiveData<MutableList<ProductTypeModel>> = _productType
-    val recommendation: LiveData<MutableList<ItemModel>> = _recommendation
+    val recommendation: LiveData<MutableList<ItemsModel>> = _recommendation
 
     fun loadBanners() {
         val Ref = firebaseDatabase.getReference("Banner")
@@ -67,9 +66,9 @@ class MainViewModel(): ViewModel() {
         val Ref = firebaseDatabase.getReference("Products")
         Ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                val lists = mutableListOf<ItemModel>()
+                val lists = mutableListOf<ItemsModel>()
                 for (childSnapshot in snapshot.children) {
-                    val list = childSnapshot.getValue(ItemModel::class.java)
+                    val list = childSnapshot.getValue(ItemsModel::class.java)
                     if (list != null) {
                         lists.add(list)
                     }
