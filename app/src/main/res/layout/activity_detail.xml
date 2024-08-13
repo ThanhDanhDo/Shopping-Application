@@ -49,6 +49,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp2Slider"
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
                 android:layout_margin="16dp"
@@ -131,8 +132,8 @@
                     android:layout_marginEnd="0dp"
                     android:text="5"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:textSize="16sp"
+                     />
             </LinearLayout>
 
             <TextView
@@ -140,6 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:textSize="16sp"
                 android:text="TextView" />
 
         </LinearLayout>
