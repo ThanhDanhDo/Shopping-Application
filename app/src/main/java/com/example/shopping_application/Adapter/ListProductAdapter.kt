@@ -1,20 +1,19 @@
 package com.example.shopping_application.Adapter
 
 import android.content.Context
-import android.content.res.ColorStateList
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.shopping_application.Model.ProductTypeModel
 import com.example.shopping_application.R
+import com.example.shopping_application.SelectProductActivity
 import com.example.shopping_application.databinding.ViewholderListProductBinding
-import com.example.shopping_application.databinding.ViewholderProductTypeBinding
 
-class ListProductAdapter(val items: MutableList<String>) :
+class ListProductAdapter(
+    val items: MutableList<String>,
+    // Thêm listener vào constructor
+    private val listener: SelectProductActivity
+) :
     RecyclerView.Adapter<ListProductAdapter.Viewholder>() {
 
     private var selectedPosition = -1
@@ -26,12 +25,18 @@ class ListProductAdapter(val items: MutableList<String>) :
 
     }
 
+    //click vao anh trong rvListProduct thi imgProduct đổi theo trong SelectProductActivity
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ListProductAdapter.Viewholder {
         context = parent.context
-        val binding = ViewholderListProductBinding.inflate(LayoutInflater.from(context), parent, false)
+        val binding =
+            ViewholderListProductBinding.inflate(LayoutInflater.from(context), parent, false)
         return Viewholder(binding)
     }
 
@@ -45,12 +50,13 @@ class ListProductAdapter(val items: MutableList<String>) :
             selectedPosition = position
             notifyItemChanged(lastSelectedPosition)
             notifyItemChanged(selectedPosition)
+
+            listener.onItemClick(position) // Gọi listener để thông báo vị trí đã chọn
         }
 
         if (selectedPosition == position) {
             holder.binding.listProductLayout.setBackgroundResource(R.drawable.grey_bg_selected)
-        }
-        else {
+        } else {
             holder.binding.listProductLayout.setBackgroundResource(R.drawable.grey_bg)
         }
     }

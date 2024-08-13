@@ -1,5 +1,6 @@
 package com.example.shopping_application
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
@@ -86,8 +87,19 @@ class DetailActivity : BaseActivity() {
         binding.txtPrice.text = "$" + item.price
         binding.txtRating.text = "${item.rating} Ratting"
         binding.btnAddToCart.setOnClickListener {
-            item.numberInCart = numberOder
-            managementCart.insertFood(item)
+//            item.numberInCart = numberOder
+//            managementCart.insertFood(item)
+            //Nếu product không có size và color chỉ có 1 thì add to cart trực tiếp
+            if (item.size.isEmpty() && item.picUrl.size == 1) {
+                item.numberInCart = numberOder
+                managementCart.insertFood(item)
+            }
+            //product có size và có hơn 1 color
+            else {
+                val intent = Intent(this@DetailActivity, SelectProductActivity::class.java)
+                intent.putExtra("object", item)
+                startActivity(intent)
+            }
         }
         binding.btnBack.setOnClickListener { finish() }
         binding.btnCart.setOnClickListener {
