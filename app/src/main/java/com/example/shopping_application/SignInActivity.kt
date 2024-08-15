@@ -1,6 +1,8 @@
 package com.example.shopping_application
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -19,6 +21,8 @@ private lateinit var binding: ActivitySignInBinding
 class SignInActivity : AppCompatActivity() {
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var databaseReference: DatabaseReference
+    //SharedPreferences để lưu thông tin người dùng hiện tại
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +32,8 @@ class SignInActivity : AppCompatActivity() {
         //khởi tạo database firebase
         firebaseDatabase = FirebaseDatabase.getInstance()
         databaseReference = firebaseDatabase.reference.child("users")
+
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
 
         binding.btnSignIn.setOnClickListener {
             val loginUsername = binding.edtUsername.text.toString()
@@ -58,8 +64,16 @@ class SignInActivity : AppCompatActivity() {
                         val userData = userSnapshot.getValue(UserData::class.java)
 
                         if (userData != null && userData.password == password) {
+                            // lưu ID user hiện tại vào SharedPreferences
+                            val editor = sharedPreferences.edit()
+                            editor.putString("userId", userData.id)
+                            editor.apply()
+
                             Toast.makeText(this@SignInActivity, "Login Successful", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this@SignInActivity, MainActivity::class.java))
+                            // Gửi username sang MainActivity
+                            val intent = Intent(this@SignInActivity, MainActivity::class.java)
+                            intent.putExtra("username", username)
+                            startActivity(intent)
                             finish()
                             return
                         }

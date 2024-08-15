@@ -247,7 +247,6 @@ Dành cho chế độ xem trước trong Android Studio, DotsIndicator sẽ hi�
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/btnExplore"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
@@ -301,7 +300,6 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/btnFavorite"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
@@ -321,13 +319,13 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/btnMyOrder"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/btnMyOrder"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
@@ -353,7 +351,6 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/btnProfile"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"

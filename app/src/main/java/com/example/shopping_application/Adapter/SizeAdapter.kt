@@ -1,6 +1,7 @@
 package com.example.shopping_application.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.View
@@ -9,14 +10,18 @@ import android.widget.ImageView
 import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.shopping_application.DetailActivity
 import com.example.shopping_application.Model.ProductTypeModel
 import com.example.shopping_application.R
 import com.example.shopping_application.databinding.ViewholderListProductBinding
 import com.example.shopping_application.databinding.ViewholderProductTypeBinding
 import com.example.shopping_application.databinding.ViewholderSizeBinding
 
-class SizeAdapter(val items: MutableList<String>) :
-    RecyclerView.Adapter<SizeAdapter.Viewholder>() {
+class SizeAdapter(
+    val items: MutableList<String>,
+    // Truyền listener vào constructor
+    private val onSizeSelected: (String) -> Unit
+) : RecyclerView.Adapter<SizeAdapter.Viewholder>() {
 
     private var selectedPosition = -1
     private var lastSelectedPosition = -1
@@ -44,13 +49,14 @@ class SizeAdapter(val items: MutableList<String>) :
             selectedPosition = position
             notifyItemChanged(lastSelectedPosition)
             notifyItemChanged(selectedPosition)
+            onSizeSelected(items[position]) // Gọi listener để thông báo kích thước đã chọn
+
         }
 
         if (selectedPosition == position) {
             holder.binding.sizeLayout.setBackgroundResource(R.drawable.grey_bg_selected)
             holder.binding.txtSize.setTextColor(context.resources.getColor(R.color.darkGreen))
-        }
-        else {
+        } else {
             holder.binding.sizeLayout.setBackgroundResource(R.drawable.grey_bg)
             holder.binding.txtSize.setTextColor(context.resources.getColor(R.color.black))
         }

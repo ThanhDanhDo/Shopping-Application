@@ -2,6 +2,7 @@ package com.example.shopping_application.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -35,10 +36,16 @@ class CartAdapter  (
         holder.binding.txtPriceEachItem.text = "$ ${item.price}"
         holder.binding.txtTotalEachItem.text = "$ ${Math.round(item.numberInCart*item.price)}"
         holder.binding.txtNumberEachItem.text = item.numberInCart.toString()
+        if (item.size.isNotEmpty()) {
+            holder.binding.txtSize.text = item.selectedSize
+        }
+        else {
+            holder.binding.LinearLayoutSize.visibility = View.GONE
+        }
+
 
         Glide.with(holder.itemView.context)
-            .load(item.picUrl[0])
-            .apply(RequestOptions().transform(CenterCrop()))
+            .load(item.selectedImageUrl ?: item.picUrl[0]) // Hiển thị ảnh đã chọn, nếu không có thì hiển thị ảnh mặc định
             .into(holder.binding.imgProduct)
 
         holder.binding.btnPlusCart.setOnClickListener {

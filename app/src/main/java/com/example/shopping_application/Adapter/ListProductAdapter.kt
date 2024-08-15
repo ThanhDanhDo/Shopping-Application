@@ -25,7 +25,7 @@ class ListProductAdapter(
 
     }
 
-    //click vao anh trong rvListProduct thi imgProduct đổi theo trong SelectProductActivity
+    //click vao img trong rvListProduct thi imgProduct đổi theo trong SelectProductActivity
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }

@@ -10,7 +10,10 @@ data class ItemsModel(
     var size: ArrayList<String> = ArrayList(),
     var price: Double = 0.0,
     var rating: Double = 0.0,
-    var numberInCart: Int = 0
+    var numberInCart: Int = 0,
+    // Thêm hai thuộc tính cho SelectProductActivity
+    var selectedSize: String? = null,      // Kích thước đã chọn
+    var selectedImageUrl: String? = null   // URL hình ảnh đã chọn
 ):Parcelable {
     constructor(parcel : Parcel):this(
         parcel.readString().toString(),

@@ -81,8 +81,7 @@ class DetailActivity : AppCompatActivity() {
         binding.txtPrice.text = "$ " + item.price
         binding.txtRating.text = "${item.rating} Ratting"
         binding.btnAddToCart.setOnClickListener {
-//            item.numberInCart = numberOder
-//            managementCart.insertFood(item)
+
             //Nếu product không có size và color chỉ có 1 thì add to cart trực tiếp
             if (item.size.isEmpty() && item.picUrl.size == 1) {
                 item.numberInCart = numberOder

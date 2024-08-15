@@ -31,18 +31,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setUserName()
         initBanner()
-
         initProductType()
-
         initRecommendation()
-
         initBottomMenu()
+    }
+
+    private fun setUserName() {
+        // Nhận dữ liệu từ Intent
+        val username = intent.getStringExtra("username")
+        binding.txtUsername.text = username
     }
 
     private fun initBottomMenu() {
         binding.btnCart.setOnClickListener {
             startActivity(Intent(this@MainActivity, CartActivity::class.java))
+        }
+
+        binding.btnMyOrder.setOnClickListener {
+            startActivity(Intent(this@MainActivity, OrderActivity::class.java))
         }
     }
 

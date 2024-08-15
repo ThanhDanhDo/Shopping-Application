@@ -18,6 +18,9 @@ class SelectProductActivity : AppCompatActivity() {
     private lateinit var item: ItemsModel
     private var numberOder = 1
     private lateinit var managementCart: ManagmentCart
+    //2 bien selected... để lưu lựa chọn imgUrl và Size trong 2 recyclerView
+    private var selectedImageUrl: String? = null
+    private var selectedSize: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +43,16 @@ class SelectProductActivity : AppCompatActivity() {
                 sizeList.add(size.toString())
             }
 
-            binding.rvListSize.adapter = SizeAdapter(sizeList)
+            val sizeAdapter = SizeAdapter(sizeList) { size ->
+                selectedSize = size
+            }
+            binding.rvListSize.adapter = sizeAdapter
             binding.rvListSize.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+//            binding.rvListSize.adapter = SizeAdapter(sizeList)
+//            binding.rvListSize.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+
 
 //            val listProduct = ArrayList<String>()
 //            for (imageUrl in item.picUrl) {
@@ -60,7 +71,12 @@ class SelectProductActivity : AppCompatActivity() {
         binding.txtPrice.text = "$" + item.price
         binding.btnAddToCart.setOnClickListener {
             item.numberInCart = numberOder
+            // Lưu ảnh đã chọn và kích thước đã chọn vào item
+            selectedImageUrl?.let { item.selectedImageUrl = it }
+            selectedSize?.let { item.selectedSize = it }
+
             managementCart.insertFood(item)
+            finish()
         }
         binding.btnBack.setOnClickListener { finish() }
     }
@@ -75,6 +91,7 @@ class SelectProductActivity : AppCompatActivity() {
 
     // Xử lý sự kiện khi người dùng chọn hình ảnh khác từ RecyclerView
     fun onItemClick(position: Int) {
+        selectedImageUrl = item.picUrl[position]  // Lưu URL ảnh được chọn
         updateProductImage(position)
     }
 }
