@@ -26,8 +26,6 @@ class SelectProductActivity : AppCompatActivity() {
 
         managementCart = ManagmentCart(this)
 
-
-
         getBundle()
 
         // Tải hình ảnh ban đầu

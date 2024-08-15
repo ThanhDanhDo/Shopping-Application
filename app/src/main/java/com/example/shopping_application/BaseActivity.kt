@@ -19,9 +19,9 @@ open class BaseActivity : AppCompatActivity() {
 
 //FLAG_LAYOUT_NO_LIMITS: Đây là cờ được sử dụng để cho phép layout của Activity mở rộng ra toàn màn hình,
 // bao gồm các khu vực dưới thanh trạng thái và thanh điều hướng.
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-        )
+//        window.setFlags(
+//            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+//            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+//        )
     }
 }

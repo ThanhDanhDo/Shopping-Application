@@ -223,7 +223,7 @@ Dành cho chế độ xem trước trong Android Studio, DotsIndicator sẽ hi�
         android:layout_height="60dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -267,6 +267,7 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/btnCart"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
@@ -276,7 +277,6 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
 gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con trong đó-->
 
                     <ImageView
-                        android:id="@+id/btnCart"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
@@ -288,7 +288,7 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explore"
+                        android:text="Cart"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="10sp" />
@@ -314,7 +314,7 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explore"
+                        android:text="Wishlist"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="10sp" />
@@ -340,7 +340,7 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explore"
+                        android:text="My Order"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="10sp" />
@@ -366,7 +366,7 @@ gravity: căn chỉnh cả các nội dung con gồm text, các phần tử con 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Explore"
+                        android:text="Profile"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textSize="10sp" />

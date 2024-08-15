@@ -17,7 +17,7 @@ import com.example.shopping_application.Model.ItemsModel
 import com.example.shopping_application.Model.SliderModel
 import com.example.shopping_application.databinding.ActivityDetailBinding
 
-class DetailActivity : BaseActivity() {
+class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var item: ItemsModel
     private var numberOder = 1
@@ -25,14 +25,8 @@ class DetailActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         managementCart = ManagmentCart(this)
 
@@ -84,7 +78,7 @@ class DetailActivity : BaseActivity() {
 
         binding.txtProductName.text = item.productName
         binding.txtDescription.text = item.description
-        binding.txtPrice.text = "$" + item.price
+        binding.txtPrice.text = "$ " + item.price
         binding.txtRating.text = "${item.rating} Ratting"
         binding.btnAddToCart.setOnClickListener {
 //            item.numberInCart = numberOder
@@ -103,7 +97,7 @@ class DetailActivity : BaseActivity() {
         }
         binding.btnBack.setOnClickListener { finish() }
         binding.btnCart.setOnClickListener {
-
+            startActivity(Intent(this@DetailActivity, CartActivity::class.java))
         }
 
     }
