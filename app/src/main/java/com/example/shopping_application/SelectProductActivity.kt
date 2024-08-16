@@ -82,10 +82,8 @@ class SelectProductActivity : AppCompatActivity() {
     }
 
     private fun updateProductImage(position: Int) {
-        val requestOptions = RequestOptions().transform(CenterCrop())
         Glide.with(this)
             .load(item.picUrl[position])
-            .apply(requestOptions)
             .into(binding.imgProduct)
     }
 

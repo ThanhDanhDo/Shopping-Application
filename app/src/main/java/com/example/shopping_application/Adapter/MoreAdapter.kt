@@ -2,6 +2,7 @@ package com.example.shopping_application.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -32,7 +33,12 @@ class MoreAdapter (
 
         holder.binding.txtProductName.text = product.productName
         holder.binding.txtFeeEach.text = "$ ${product.feeEach}"
-        holder.binding.txtSize.text = product.size
+        if (product.size == null) {
+            holder.binding.LinearLayoutSize.visibility = View.GONE
+        }
+        else {
+            holder.binding.txtSize.text = product.size
+        }
         holder.binding.txtQuantity.text = product.quantityOfEach.toString()
     }
 

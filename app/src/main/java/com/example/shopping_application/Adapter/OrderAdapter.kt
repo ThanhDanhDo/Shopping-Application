@@ -77,7 +77,12 @@ private var context: Context
 
         holder.binding.txtProductName.text = firstItem?.productName
         holder.binding.txtFeeEach.text = "$${firstItem?.feeEach}"
-        holder.binding.txtSize.text = firstItem?.size
+        if (firstItem?.size == null) {
+            holder.binding.LinearLayoutSize.visibility = View.GONE
+        }
+        else {
+            holder.binding.txtSize.text = firstItem?.size
+        }
         holder.binding.txtQuantity.text = firstItem?.quantityOfEach.toString()
 
         holder.binding.btnMore.setOnClickListener {
