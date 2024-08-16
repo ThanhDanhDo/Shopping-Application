@@ -12,6 +12,16 @@
 - Others: Banner, Product Type, Recommendation
 
 
+## Programming Language
+
+- Kotlin
+
+
+## IDE
+
+- Android Studio
+
+
 ## Database
 
 - **Firebase:** Realtime Database, Storage
