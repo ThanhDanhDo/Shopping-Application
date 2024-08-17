@@ -6,8 +6,8 @@
 ## Functions
 
 - Sign Up/ Sign In 
-- Cart 
 - Select Attribute of product
+- Cart 
 - My Order 
 - Others: Banner, Product Type, Recommendation
 
