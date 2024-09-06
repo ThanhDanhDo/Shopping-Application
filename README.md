@@ -30,7 +30,8 @@
 ## Download
 
 - APK: [download](https://github.com/ThanhDanhDo/Shopping-Application/releases/download/untagged-89dfbe4091ed350e09e4/app-debug-16-08-24.apk)
-
+- APK from Drive: [drive](https://drive.google.com/file/d/1tEvOU4r3GDPvmhW2ETdUEpzPpq2JByF-/view?usp=drive_link)
+  
 
 ## Screenshots
 
