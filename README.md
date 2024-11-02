@@ -15,6 +15,8 @@
 ## Programming Language
 
 - Kotlin
+- XML
+- Java
 
 
 ## IDE
@@ -32,6 +34,20 @@
 - APK: [download](https://github.com/ThanhDanhDo/Shopping-Application/releases/download/untagged-89dfbe4091ed350e09e4/app-debug-16-08-24.apk)
 - APK from Drive: [drive](https://drive.google.com/file/d/1tEvOU4r3GDPvmhW2ETdUEpzPpq2JByF-/view?usp=drive_link)
   
+
+## Demo
+
+https://github.com/user-attachments/assets/d9696e76-7f71-4aa6-a1b7-46f1bed56fc4
+
+Google Drive: [link](https://drive.google.com/file/d/1UMVh-sM1LM37z8JFD42mRTqIQVN0LM4_/view?usp=sharing)
+
+
+## Demo Database (Firebase)
+
+https://github.com/user-attachments/assets/cf91f8b8-5647-4074-b2bf-c0640c309543
+
+Google Drive: [link](https://drive.google.com/file/d/1Gm5E-iETwyYmPtuIdYc8s14-r_czMaYA/view?usp=sharing)
+
 
 ## Screenshots
 
@@ -106,17 +122,6 @@
   <img src="https://github.com/ThanhDanhDo/Shopping-Application/blob/041939bc579b5fec239eb06cb238738e506d3737/screenshots/database_user_order.png" height="300" />
   <img src="https://github.com/ThanhDanhDo/Shopping-Application/blob/041939bc579b5fec239eb06cb238738e506d3737/screenshots/storage.png" height="300" />
 </p>
-
-
-## Demo
-
-https://github.com/user-attachments/assets/d9696e76-7f71-4aa6-a1b7-46f1bed56fc4
-
-Google Drive: [link](https://drive.google.com/file/d/1UMVh-sM1LM37z8JFD42mRTqIQVN0LM4_/view?usp=sharing)
-
-https://github.com/user-attachments/assets/cf91f8b8-5647-4074-b2bf-c0640c309543
-
-Google Drive: [link](https://drive.google.com/file/d/1Gm5E-iETwyYmPtuIdYc8s14-r_czMaYA/view?usp=sharing)
 
 ## 🔗 Reference link
 
