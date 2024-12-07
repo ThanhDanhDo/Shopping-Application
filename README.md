@@ -30,7 +30,7 @@
 
 
 ## ソフトウェアアーキテクチャ
-MVVM (Model-View-ViewModel)
+- MVVM (Model-View-ViewModel)
 
 
 ## ダウンロード
