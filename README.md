@@ -29,6 +29,10 @@
 - **Firebase:** Realtime Database, Storage
 
 
+## ソフトウェアアーキテクチャ
+MVVM (Model-View-ViewModel)
+
+
 ## ダウンロード
 
 - APK: [download](https://github.com/ThanhDanhDo/Shopping-Application/releases/download/untagged-89dfbe4091ed350e09e4/app-debug-16-08-24.apk)
