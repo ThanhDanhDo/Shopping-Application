@@ -38,6 +38,44 @@
 - APK: [download](https://github.com/ThanhDanhDo/Shopping-Application/releases/download/untagged-89dfbe4091ed350e09e4/app-debug-16-08-24.apk)
 - DriveからのAPK: [drive](https://drive.google.com/file/d/1tEvOU4r3GDPvmhW2ETdUEpzPpq2JByF-/view?usp=drive_link)
   
+## ディレクトリ構造
+
+```text
+Shopping-Application/
+├── .idea/                   # Android StudioのIDE設定ファイル
+├── apk/                     # ビルド済みAPKファイル格納用ディレクトリ
+├── gradle/                  # Gradleビルドシステムの設定
+├── screenshots/             # アプリケーションの動作デモ画像
+│
+└── app/                     # メインアプリケーションソースコード
+    └── src/
+        └── main/
+            └── java/
+                └── com/
+                    └── example/
+                        └── shopping_application/
+                            │
+                            ├── Adapter/                     # RecyclerView用アダプタークラス群
+                            ├── Helper/                      # 共通ユーティリティ（SharedPreferences操作など）
+                            ├── Model/                       # データモデルクラス（カート/注文/ユーザー）
+                            ├── ViewModel/                   # MVVMアーキテクチャ用ViewModel
+                            │
+                            ├── BaseActivity.kt              # Activity基底クラス
+                            ├── CartActivity.kt              # ショッピングカート画面
+                            ├── DetailActivity.kt            # 商品詳細画面
+                            ├── IntroActivity.kt             # 初期起動画面
+                            ├── MainActivity.kt              # ホーム画面
+                            ├── MoreActivity.kt              # 追加オプション画面
+                            ├── OrderActivity.kt             # 注文処理画面
+                            ├── SelectProductActivity.kt     # 商品選択画面
+                            ├── SignInActivity.kt            # ログイン画面
+                            ├── SignUpActivity.kt            # 新規登録画面
+                            │
+                            └── Entities/                    # コアデータクラス:
+                                ├── EachProductOrderData.kt  # 注文内商品詳細
+                                ├── OrderData.kt             # 注文情報総合
+                                └── UserData.kt              # ユーザー情報
+```
 
 ## デモ
 
